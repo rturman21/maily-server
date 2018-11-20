@@ -25,7 +25,7 @@ passport.use(new GoogleStrategy({
         googleId: profile.id
     }).then((existingUser) => {
         if (existingUser) {
-            done(null, existingUser);
+            return done(null, existingUser);
         } else {
             new User({
                 googelId: profile.id
